@@ -4,10 +4,9 @@ import org.vsdl.astral.util.AALogger;
 import org.vsdl.astral.util.LogLevel;
 
 import static org.vsdl.astral.engine.TestDriver.KERNEL_PROCESS_ID;
+import static org.vsdl.astral.models.util.Constants.TURN_LENGTH_MS;
 
 public class Kernel extends Thread {
-
-    private static final int TURN = 125;
 
     private static Kernel instance;
 
@@ -42,7 +41,7 @@ public class Kernel extends Thread {
 
     private void executeTurn() {
         long now = System.currentTimeMillis();
-        long next = now + TURN;
+        long next = now + TURN_LENGTH_MS;
         //todo - stuff!
         ++turnCounter;
         now = System.currentTimeMillis();
